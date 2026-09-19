@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@font-face {
+  font-family: "Klipo CJK";
+  src: local("WenQuanYi Zen Hei"), local("Noto Sans CJK KR"), local("Noto Sans KR");
+  unicode-range: U+AC00-D7AF, U+1100-11FF, U+3130-318F;
+}
+
+@theme {
+  --color-bg: #0a0a0c;
+  --color-surface: #121214;
+  --color-elevated: #1a1a1e;
+  --color-fg: #f4f4f5;
+  --color-muted: #9a9aa3;
+  --color-subtle: #6e6e78;
+  --color-primary: #5eead4;
+  --color-primary-fg: #042f2e;
+  --color-border: #ffffff14;
+  --color-danger: #f87171;
+  --color-background: #0a0a0c;
+  --color-foreground: #f4f4f5;
+  --color-card: #121214;
+  --color-ring: #5eead4;
+  --font-sans: "Figtree", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  --font-display: "Syne", "Figtree", system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  body {
+    font-family: var(--font-sans);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.phone-bezel {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.timeline-grid {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 48px 100%;
+}
